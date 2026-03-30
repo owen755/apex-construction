@@ -7,14 +7,27 @@ import crystalSconcePhoto from '../assets/WhatsApp Image 2026-03-30 at 14.00.31.
 import bedroomLightingPhoto from '../assets/WhatsApp Image 2026-03-30 at 14.02.08.jpeg';
 import livingRoomLightingPhoto from '../assets/WhatsApp Image 2026-03-30 at 14.00.33.jpeg';
 import ringChandelierPhoto from '../assets/WhatsApp Image 2026-03-30 at 14.00.34.jpeg';
+import chandelierShowcase from '../assets/WhatsApp Image 2026-03-30 at 14.00.35.jpeg';
+import ringChandelier from '../assets/WhatsApp Image 2026-03-30 at 14.00.36.jpeg';
+import roomSetup from '../assets/WhatsApp Image 2026-03-30 at 14.02.07.jpeg';
+import bedroomDisplay from '../assets/WhatsApp Image 2026-03-30 at 14.02.08 (1).jpeg';
+import kitchenAccent from '../assets/WhatsApp Image 2026-03-30 at 14.02.08 (2).jpeg';
+import openPlanLighting from '../assets/WhatsApp Image 2026-03-30 at 14.02.08 (3).jpeg';
 
 const products = [
   { id: 1, title: "Tiered Crystal Chandelier", description: "Tiered crystal ceiling lighting designed for elegant entryways, lounges, and luxury living spaces. Custom pricing available — request a quote today.", img: tieredChandelierPhoto, category: "Lighting", price: "Custom quote after consultation" },
   { id: 2, title: "Rectangular Pendant Light", description: "A modern pendant fixture with crystal accents, ideal for dining areas and statement interiors. Custom pricing available — request a quote today.", img: rectangularPendantPhoto, category: "Lighting", price: "Custom quote after consultation" },
   { id: 3, title: "Crystal Wall Sconce Pair", description: "Polished wall sconces with luxury crystal detail for bedrooms, hallways, and accent walls. Custom pricing available — request a quote today.", img: crystalSconcePhoto, category: "Fixtures", price: "Custom quote after consultation" },
-  { id: 4, title: "Bedroom Lighting Package", description: "A curated bedroom lighting package featuring premium fixtures and warm ambient illumination. Custom pricing available — request a quote today.", img: bedroomLightingPhoto, category: "Fixtures", price: "Custom quote after consultation" },
+  { id: 4, title: "living Room Lighting Package", description: "A curated livingroom lighting package featuring premium fixtures and warm ambient illumination. Custom pricing available — request a quote today.", img: bedroomLightingPhoto, category: "Fixtures", price: "Custom quote after consultation" },
   { id: 5, title: "Living Room Accent Lighting", description: "Designer lighting and fixture styling tailored for living room feature walls and entertainment spaces. Custom pricing available — request a quote today.", img: livingRoomLightingPhoto, category: "Fixtures", price: "Custom quote after consultation" },
-  { id: 6, title: "Modern Ring Ceiling Chandelier", description: "Contemporary ring chandelier lighting built for modern renovations and premium interiors. Custom pricing available — request a quote today.", img: ringChandelierPhoto, category: "Renovation", price: "Custom quote after consultation" },
+  { id: 6, title: "Bed Room Accent Lighting", description: "Contemporary ring chandelier lighting built for modern renovations and premium interiors. Custom pricing available — request a quote today.", img: ringChandelierPhoto, category: "Renovation", price: "Custom quote after consultation" },
+ { id: 7, title: "Living Room Wall Package", description: "Premium ceiling lighting that makes a bold statement in luxury interiors.", img: chandelierShowcase, category: "Lighting", price: "Custom quote after consultation"  },
+  { id: 8, title: "Modern Ring Suspension", description: "A sculptural hanging chandelier designed for upscale living and dining spaces.", img: ringChandelier, category: "Fixtures", price: "Custom quote after consultation"  },
+  { id: 9, title: "Minimalist Room Upgrade", description: "A clean, polished room setup highlighting refined lighting and design accents.", img: roomSetup, category: "Lighting", price: "Custom quote after consultation"  },
+  { id: 10, title: "Luxury Bedroom Display", description: "Bedroom lighting and fixtures styled to create an inviting, premium retreat.", img: bedroomDisplay, category: "Renovation", price: "Custom quote after consultation"  },
+  { id: 11, title: "Kitchen Accent Lighting", description: "Contemporary kitchen lighting with modern fixtures and polished finishes.", img: kitchenAccent, category: "Fixtures", price: "Custom quote after consultation"  },
+  { id: 12, title: "Open Plan Accent Lighting", description: "Stylish lighting installations for dynamic living and dining areas.", img: openPlanLighting, category: "Lighting", price: "Custom quote after consultation"  },
+
 ];
 
 const categories = ['All', 'Lighting', 'Fixtures', 'Renovation'];
