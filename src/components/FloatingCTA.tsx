@@ -5,7 +5,7 @@ export default function FloatingCTA() {
     <div className="fixed right-6 bottom-6 z-50 flex flex-col items-end gap-3">
       <div className="relative group">
         <a
-          href="https://wa.me/0796222991"
+          href="https://wa.me/+254796222991"
           target="_blank"
           rel="noreferrer"
           aria-label="WhatsApp for a quote"
