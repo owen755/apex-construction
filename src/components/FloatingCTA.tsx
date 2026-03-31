@@ -19,7 +19,7 @@ export default function FloatingCTA() {
       </div>
       <div className="relative group">
         <a
-          href="tel:0796222991"
+          href="tel:+254796222991"
           aria-label="Call us"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-900 text-white shadow-xl shadow-black/20 transition-transform hover:-translate-y-1"
         >
