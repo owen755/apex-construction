@@ -15,6 +15,7 @@ export default function ContactForm() {
       // ⚠️ PASTE YOUR GOOGLE WEB APP URL INSIDE THE QUOTES BELOW ⚠️
       const response = await fetch('https://script.google.com/macros/s/AKfycbxnUHPElg7fEwL8Pi2Ovvox9-saaqEvwBKls09JekW4z5D9WnNUivqUatsmbFE6ZvHG_w/exec', {
         method: 'POST',
+        mode: 'no-cors',
         body: formData,
       });
 
