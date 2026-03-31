@@ -3,29 +3,34 @@ import { useState } from 'react';
 
 export default function ContactForm() {
   const [status, setStatus] = useState(''); 
-  const [showSuccess, setShowSuccess] = useState(false); // <-- New state for the popup
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setStatus('Sending...');
 
-    const formData = new FormData(e.target);
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    // 🔥 THE FIX: Google Apps Script needs the data formatted as URL parameters!
+    // If we don't do this, Google rejects it and the sheet stays empty.
+    const formBody = new URLSearchParams(formData as any).toString();
 
     try {
-      // ⚠️ PASTE YOUR GOOGLE WEB APP URL INSIDE THE QUOTES BELOW ⚠️
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxnUHPElg7fEwL8Pi2Ovvox9-saaqEvwBKls09JekW4z5D9WnNUivqUatsmbFE6ZvHG_w/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbxnUHPElg7fEwL8Pi2Ovvox9-saaqEvwBKls09JekW4z5D9WnNUivqUatsmbFE6ZvHG_w/exec', {
         method: 'POST',
-        mode: 'no-cors',
-        body: formData,
+        mode: 'no-cors', // Bypasses the strict browser security
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody,
       });
 
-      if (response.ok) {
-        setStatus(''); // Reset button text
-        setShowSuccess(true); // Trigger the success popup
-        e.target.reset(); // Clear the form
-      } else {
-        setStatus('Error sending.');
-      }
+      // Because 'no-cors' hides the response, we just trigger success immediately
+      setStatus(''); 
+      setShowSuccess(true); 
+      form.reset(); 
+
     } catch (error) {
       console.error('Error!', error);
       setStatus('Error sending.');
@@ -54,7 +59,7 @@ export default function ContactForm() {
         </form>
       </div>
 
-      {/* 👇 The Animated Success Popup 👇 */}
+      {/* The Animated Success Popup */}
       <AnimatePresence>
         {showSuccess && (
           <motion.div 
@@ -69,7 +74,6 @@ export default function ContactForm() {
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               className="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl"
             >
-              {/* Green Checkmark Icon */}
               <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
